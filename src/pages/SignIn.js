@@ -48,7 +48,7 @@ function SignIn() {
                 }
                 </label>
                 <label className="label relative" >
-                  <Link to='/forget-password'><span className="label-text font-semibold underline absolute top-0 right-0 py-2 text-lime-600">Forgot Password ?</span></Link>
+                  <Link to='/forgot-password'><span className="label-text font-semibold underline absolute top-0 right-0 py-2 text-lime-600">Forgot Password ?</span></Link>
                 </label>
               </div>
              
