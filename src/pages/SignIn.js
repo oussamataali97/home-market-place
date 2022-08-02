@@ -2,6 +2,11 @@ import React from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 import {useState} from 'react'
 import {AiFillEye,AiFillEyeInvisible} from 'react-icons/ai'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {toast } from 'react-toastify';
+
+
+
 
 
 function SignIn() {
@@ -21,13 +26,32 @@ function SignIn() {
       [e.target.id]:e.target.value,
     }))
 
+
   }
+
+  const onSubmit=async(e)=>{
+    e.preventDefault()
+    try{
+      const auth=getAuth()
+      const userCredential= await signInWithEmailAndPassword(auth,email,password)
+      if(userCredential.user){
+        toast.success(`Welcome Mr ${userCredential.user.displayName.toUpperCase()}`,{
+          autoClose: 1000,
+        })
+        setTimeout(()=>navigate('/'),2000)
+
+      }
+    } catch (error){
+      toast.error('Something wrong with signing')
+    }
+  }
+   
   return (
       <>
         <div className="pageContainer max-w-xl mx-auto p-3">
           <h1 className=' text-2xl font-bold m-5' >Welcome Back</h1>
           <div className='shadow-xl p-5 rounded-2xl'>
-          <form>
+          <form onSubmit={onSubmit}>
             <div className="form-control ">
                 <label className="label">
                   <span className="label-text font-semibold">Your Email :</span>

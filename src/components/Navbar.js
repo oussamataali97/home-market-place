@@ -14,7 +14,7 @@ function Navbar() {
     <ul className="menu menu-horizontal p-0">
       <li><Link to="/"> <MdExplore size={20} color="green" />Explore</Link></li>
       <li><Link to="/offers"> <MdLocalOffer size={20} color="green" />Offers</Link></li>
-      <li><Link to="/sign-in"> <FaUserAlt size={20} color="green" />Profile</Link></li>
+      <li><Link to="/profile"> <FaUserAlt size={20} color="green" />Profile</Link></li>
     </ul>
   </div>
 </div>

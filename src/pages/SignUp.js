@@ -2,6 +2,11 @@ import React from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 import {useState} from 'react'
 import {AiFillEye,AiFillEyeInvisible} from 'react-icons/ai'
+import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
+import {db} from '../firebase.config'
+import { doc, setDoc,serverTimestamp } from "firebase/firestore"; 
+import {toast } from 'react-toastify';
+
 
 
 function SignUp() {
@@ -23,19 +28,51 @@ function SignUp() {
     }))
 
   }
+
+  const onSubmit= async(e)=>{
+    e.preventDefault();
+    try {
+      const auth = getAuth();
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password) 
+      const user=userCredential.user
+
+      updateProfile(auth.currentUser,{
+        displayName:name
+      }) 
+
+      const dataCopy={...formData}
+      delete  dataCopy.password
+      dataCopy.timestamp =serverTimestamp()
+      await setDoc(doc(db,"users",user.uid),dataCopy)
+      toast.success('Registration done !')
+
+      navigate('/') 
+      
+
+
+    } catch (error){
+      toast.error('Something wrong with  registartion',{
+        autoClose: 2000,
+      })
+    }
+
+  }
+
   return (
       <>
-        <div className="pageContainer max-w-xl mx-auto p-3">
-          <h1 className=' text-2xl font-bold m-5' >Welcome Dear </h1>
-          <div className='shadow-xl p-5 rounded-2xl'>
-          <form>
+        <div className="shadow-xl pageContainer max-w-xl mx-auto p-3">
+          <p className=' text-2xl font-bold m-5' >Register. <br/> <span className='font-light text-xl'> And enjoy life during the time you just saved!
+
+</span></p>
+          <div className=' p-3 rounded-2xl'>
+          <form onSubmit={onSubmit} >
 
           <div className="form-control ">
                 <label className="label">
                   <span className="label-text font-semibold">Your Name :</span>
                 </label>
                 <label className="input-group">
-                  <input type="text" placeholder="info@site.com"  onChange={handleChange} value={name} id='name' className="input input-bordered w-full" />
+                  <input type="text" placeholder="John Doe .. "  onChange={handleChange} value={name} id='name' className="input input-bordered w-full" />
                 </label>
               </div>
             <div className="form-control ">
