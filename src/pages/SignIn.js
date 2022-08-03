@@ -4,6 +4,7 @@ import {useState} from 'react'
 import {AiFillEye,AiFillEyeInvisible} from 'react-icons/ai'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {toast } from 'react-toastify';
+import Oauth from '../components/Oauth';
 
 
 
@@ -49,7 +50,7 @@ function SignIn() {
   return (
       <>
         <div className="pageContainer max-w-xl mx-auto p-3">
-          <h1 className=' text-2xl font-bold m-5' >Welcome Back</h1>
+          <h1 className=' text-2xl font-bold m-5 text-center text-red-500' >Welcome Back</h1>
           <div className='shadow-xl p-5 rounded-2xl'>
           <form onSubmit={onSubmit}>
             <div className="form-control ">
@@ -78,8 +79,14 @@ function SignIn() {
              
               <button className='btn bg-lime-600 hover:bg-lime-700 block border-none w-full mt-6'>Sign In</button>
           </form>
-          <Link to='/sign-up'><p className='text-center text-lime-600 mt-10 font-bold block'> Sign Up instead</p></Link>
+          <div className="google-auth text-center">
+            <Oauth className='text-center' />
+          </div>
+         
 
+          <Link to='/sign-up'><p className='text-center text-lime-600 mt-5 font-bold block'> Sign Up instead</p></Link>
+
+              
           </div>
           
         </div>

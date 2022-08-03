@@ -6,6 +6,8 @@ import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/
 import {db} from '../firebase.config'
 import { doc, setDoc,serverTimestamp } from "firebase/firestore"; 
 import {toast } from 'react-toastify';
+import Oauth from '../components/Oauth';
+
 
 
 
@@ -61,7 +63,7 @@ function SignUp() {
   return (
       <>
         <div className="shadow-xl pageContainer max-w-xl mx-auto p-3">
-          <p className=' text-2xl font-bold m-5' >Register. <br/> <span className='font-light text-xl'> And enjoy life during the time you just saved!
+          <p className=' text-2xl font-bold m-5 text-red-400' >Register. <br/> <span className='font-light text-xl text-gray-700'> And enjoy life during the time you just saved!
 
 </span></p>
           <div className=' p-3 rounded-2xl'>
@@ -99,7 +101,10 @@ function SignUp() {
              
               <button className='btn bg-lime-600 hover:bg-lime-700 block border-none w-full mt-6'>Sign UP</button>
           </form>
-          <Link to='/sign-in'><p className='text-center text-lime-600 mt-10 font-bold block'> Already Have account ? Sign In </p></Link>
+          <div className="google-auth text-center">
+            <Oauth/>
+          </div>
+          <Link to='/sign-in'><p className='text-center text-lime-600 mt-3 font-bold block'> Already Have account ? Sign In </p></Link>
 
           </div>
           
