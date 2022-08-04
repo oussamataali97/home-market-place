@@ -62,9 +62,9 @@ function Profile() {
   return (
     <>
       <div className=" max-w-6xl mx-auto header flex justify-between items-center p-5">
-            <h1 className='text-3xl font-bold '>My Profile</h1>
+            <h1 className='text-3xl font-bold underline'>My Profile</h1>
           
-            <button className='rounded-full px-8 py-3 bg-lime-300 hover:bg-lime-200 mr-2' onClick={onLogout}> <FiLogOut className='inline'/> Logout</button>
+            <button className='rounded-full px-7 py-3 bg-lime-400 hover:bg-lime-200 '  onClick={onLogout}> <FiLogOut className='inline'/> Logout</button>
            
           </div>
       <div className="container max-w-4xl mx-auto p-4 mt-1">
