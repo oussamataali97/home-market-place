@@ -62,7 +62,7 @@ function SignUp() {
 
   return (
       <>
-        <div className="shadow-xl pageContainer max-w-xl mx-auto p-3">
+        <div className="shadow-xl pageContainer max-w-xl mx-auto p-3 my-3">
           <p className=' text-2xl font-bold m-5 text-red-400' >Register. <br/> <span className='font-light text-xl text-gray-700'> And enjoy life during the time you just saved!
 
 </span></p>

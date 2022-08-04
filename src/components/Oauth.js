@@ -8,7 +8,7 @@ function Oauth() {
   return (
     <div className='mt-5'>
       <p>Sign  {location.pathname === '/sign-up' ? 'up' : 'in'} with</p>
-      <button className='mt-2'><img src={googleicon} width={40} alt="" /></button>
+      <button className='mt-2 bg-lime-200 p-4 rounded-full hover:bg-red-200'><img src={googleicon} width={40} alt="" /></button>
     </div>
   )
 }

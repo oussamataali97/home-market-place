@@ -6,6 +6,7 @@ import {db} from '../firebase.config'
 import { updateDoc,doc } from 'firebase/firestore'
 import {useNavigate} from 'react-router-dom'
 import {toast } from 'react-toastify';
+import { Audio } from  'react-loader-spinner'
 
 
 function Profile() {
