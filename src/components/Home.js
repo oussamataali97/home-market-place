@@ -62,7 +62,7 @@ function Home() {
             <p className='text-lg'>We have marketing solutions for landlords, agents, and multifamily professionals.</p>
 
         </div>
-        <div className="community flex flex-col md:flex-rows gap-5 p-10">
+        <div className="community flex flex-col md:flex-row gap-5 p-10">
             <div className="left shadow-xl p-10">
                 <p className='text-3xl font-bold pt-5 text-black'>Landlords and Agents</p>
                 <p className='text-lg py-3 font-semibold'>Manage your rentals with our free leasing tools.</p>
