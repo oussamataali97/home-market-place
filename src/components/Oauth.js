@@ -43,7 +43,7 @@ function Oauth() {
   return (
     <div className='mt-5'>
       <p className='font-bold'>Sign  {location.pathname === '/sign-up' ? 'up' : 'in'} with</p>
-      <button className='mt-2 bg-lime-200 p-4 rounded-full hover:bg-red-200' onClick={onClickGoogle}><img src={googleicon} width={40} alt="" /></button>
+      <button className='mt-2 border-2 p-4 rounded-full ' onClick={onClickGoogle}><img src={googleicon} width={40} alt="" /></button>
     </div>
   )
 }

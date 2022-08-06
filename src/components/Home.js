@@ -4,6 +4,7 @@ import img2 from '../assets/jpg/paris.jpg'
 import img3 from '../assets/jpg/berlin.jpg'
 import img4 from '../assets/jpg/roma.jpg'
 import {SiVerizon} from 'react-icons/si'
+import banner from '../assets/jpg/banner.svg'
 
 
 function Home() {
@@ -58,8 +59,8 @@ function Home() {
         
     <div className="equipemnt max-w-6xl mx-auto my-10 ">
         <div className="text-center">
-            <p className='text-5xl '>Reach quality renters <br/> and fill vacancies faster.</p>
-            <p className='text-lg'>We have marketing solutions for landlords, agents, and multifamily professionals.</p>
+            <p className='md:text-5xl text-3xl font-bold '>Reach quality renters <br/> and fill vacancies faster.</p>
+            <p className='md:text-2xl text-xl font-light mt-5'>We have marketing solutions for landlords, agents, and multifamily professionals.</p>
 
         </div>
         <div className="community flex flex-col md:flex-row gap-5 p-10">
@@ -69,19 +70,19 @@ function Home() {
                 <ul className='my-5'>
                     <li className='flex'><SiVerizon className='mr-5' size={20} color={"lime"}/>Reach over 13 million high-quality renters actively searching on our network</li>
                     <li className='flex'><SiVerizon className='mr-5' size={20} color={"lime"}/>Screen renters with credit reports, background checks, and applications</li>
-                    <li className='flex'><SiVerizon className='mr-5' size={20} color={"lime"}/>Collect rent online for seamless and secure payments</li>
+                    <li className='flex'><SiVerizon className='mr-5' size={20} color={"lime"}/>Collect rent online for seamless and secure payments Sponsor</li>
                 </ul>
                 <button className='btn block w-full bg-lime-500 border-none hover:bg-lime-400'>Learn More</button>
 
 
             </div>
             <div className="right shadow-xl p-10">
-            <p className='text-3xl font-bold pt-5 text-black'>Landlords and Agents</p>
-                <p className='text-lg py-3 font-semibold'>Manage your rentals with our free leasing tools.</p>
+            <p className='text-3xl font-bold pt-5 text-black'>Multifamily Communities</p>
+                <p className='text-lg py-3 font-semibold'>Advertise with us to optimize your leasing success.</p>
                 <ul className='my-5'>
                     <li className='flex '><SiVerizon className='mr-5' size={20} color={"lime"}/>Reach over 13 million high-quality renters actively searching on our network</li>
-                    <li className='flex '><SiVerizon className='mr-5' size={20} color={"lime"}/>Screen renters with credit reports, background checks, and applications</li>
-                    <li className='flex '><SiVerizon className='mr-5' size={20} color={"lime"}/>Collect rent online for seamless and secure payments</li>
+                    <li className='flex '><SiVerizon className='mr-5' size={20} color={"lime"}/>Get exposure across our broad network of leading apartment search sites</li>
+                    <li className='flex '><SiVerizon className='mr-5' size={20} color={"lime"}/>Receive ongoing support from a dedicated Account Manager </li>
                 </ul>
                 <button className='btn block w-full bg-lime-500 border-none hover:bg-lime-400'>Learn More</button>
             </div>
@@ -89,6 +90,9 @@ function Home() {
 
     </div>
 
+    <div className="banner w-full h-64 bg-fixed" style={{backgroundImage: `url(${banner})`}}>
+   
+    </div>
     </>
   )
 }
