@@ -1,10 +1,12 @@
 import React from 'react'
-import img1 from '../assets/jpg/maroc.jpg'
-import img2 from '../assets/jpg/paris.jpg'
-import img3 from '../assets/jpg/berlin.jpg'
-import img4 from '../assets/jpg/roma.jpg'
+import img1 from '../assets/jpg/ifrane.jpg'
+import img2 from '../assets/jpg/tanger.jpg'
+import img3 from '../assets/jpg/casa.jpg'
+import img4 from '../assets/jpg/mrakch.jpg'
 import {SiVerizon} from 'react-icons/si'
 import banner from '../assets/jpg/banner.svg'
+import hero from '../assets/jpg/HeroSell.png'
+import {FaFacebook,FaInstagram,FaTwitter,FaYoutube,FaPinterest} from 'react-icons/fa'
 
 
 function Home() {
@@ -13,41 +15,41 @@ function Home() {
     <div className='text-center space-y-5 p-5 '>
         <p className='text-4xl font-bold mt-5  '>Explore our most popular cities</p>
         <p className='font-light text-lg'>See what these cities have to offer and rent the perfect place</p>
-      <div className="img-card flex-col md:flex-row flex mx-auto gap-5	 ">
+      <div className="img-card grid  md:grid-cols-2 lg:grid-cols-4 mx-auto gap-5 ">
         
-            <div className="card w-full bg-base-100 shadow-xl ">
-            <figure><img src={img1} alt="Shoes"/></figure>
+            <div className="card w-full bg-base-100 shadow-xl rounded-xl ">
+            <figure><img src={img1} alt="Shoes" className='md:h-56 md:w-full '/></figure>
             <div className="card-body">
-                <h2 className=" font-bold text-center">Ouarzezate</h2>
-                <p className='font-light text-xl'>Morocco, a North African country bordering the Atlantic Ocean and Mediterranean Sea, is distinguished by its Berber, Arabian and</p>
+                <h2 className=" font-bold mx-auto border-b-2 w-16 border-red-400 text-center mx-auto border-b-2 w-16 border-red-400">Ifrane</h2>
+                <p className='font-light text-xl'>Ifrane is a town in Morocco’s Middle Atlas Mountains. It’s known for its alpine-style architecture and nearby ski slopes and forests. A stone statue of a lion near leafy Parc la Prairie is a well-known</p>
                 
             </div>
             </div>
         
         
                     <div className="card w-full  bg-base-100 shadow-xl">
-            <figure><img src={img2} alt="Shoes" height={19} /></figure>
+            <figure><img src={img2} alt="Shoes" className='md:h-56 md:w-full ' /></figure>
             <div className="card-body">
-                <h2 className="font-bold  ">Paris</h2>
-                <p className='font-light text-xl'>Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic</p>
+                <h2 className="font-bold mx-auto border-b-2 w-16 border-red-400  ">Tanger</h2>
+                <p className='font-light text-xl'>Tangier, a Moroccan port on the Strait of Gibraltar, has been a strategic gateway between Africa and Europe since Phoenician times.</p>
                 
             </div>
             </div>
       
                     <div className="card w-full bg-base-100 shadow-xl">
-            <figure><img src={img3} alt="Shoes" /></figure>
+            <figure><img src={img3} alt="Shoes" className='md:h-56 md:w-full'/></figure>
             <div className="card-body">
-                <h2 className=" font-bold text-center">Berlin</h2>
-                <p  className='font-light text-xl'>Berlin, Germany’s capital, dates to the 13th century. Reminders of the city's turbulent 20th-century history include its Holocaust memorial and the Berlin Wall's graffitied remains. Divided during the Cold War,</p>
+                <h2 className=" font-bold mx-auto border-b-2 w-24 border-red-400 text-center">Casablanca</h2>
+                <p  className='font-light text-xl'>Casablanca is a port city and commercial hub in western Morocco, fronting the Atlantic Ocean. The city's French colonial legacy is seen in its downtown Mauresque architecture,</p>
                 
             </div>
             </div>
         
                     <div className="card w-full bg-base-100 shadow-xl">
-            <figure><img src={img4} alt="Shoes"  /></figure>
+            <figure><img src={img4} alt="Shoes" className='md:h-56 md:w-full' /></figure>
             <div className="card-body ">
-                <h2 className=" font-bold text-center text-center ">Rome</h2>
-                <p className='font-light text-xl'>Rome is the capital city of Italy. It is also the capital of the Lazio region, the centre of the Metropolitan City of Rome, and a special comune named Comune di Roma Capitale</p>
+                <h2 className=" font-bold mx-auto border-b-2 w-24 border-red-400 text-center text-center ">Marrakesh</h2>
+                <p className='font-light text-xl'>Marrakesh, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces and gardens. The medina is a densely packed, walled medieval city dating to the Berber Empire</p>
                 
             </div>
             </div>
@@ -90,8 +92,23 @@ function Home() {
 
     </div>
 
-    <div className="banner w-full h-64 bg-fixed" style={{backgroundImage: `url(${banner})`}}>
-   
+    <div className="banner w-full h-64 bg-fixed flex justify-center  bg-no-repeat bg-cover flex-col items-center" style={{backgroundImage: `url(${banner})`}}>
+        <p className='text-center text-4xl font-bold '>Home Market<span className='text-lime-500'>.</span></p>
+        <div className="icons flex space-x-8 mt-5 ">
+            <a href="#" ><FaFacebook size={40}  color='' className=' hover:text-lime-500'/></a>
+            <a href="#"><FaInstagram size={40} className='hover:text-lime-500'/></a>
+            <a href="#"><FaPinterest size={40} className='hover:text-lime-500'/></a>
+            <a href="#"><FaTwitter size={40} className='hover:text-lime-500'/></a>
+            <a href="#"><FaYoutube size={40} className='hover:text-lime-500'/></a>
+
+        </div>
+    </div>
+
+    
+    <div className="banner w-full bg-cover flex md:h-[20rem] lg:h-[36rem] h-[16rem] justify-start flex-col items-center" style={{backgroundImage: `url(${hero})`}}>
+        <p className='text-center text-2xl md:text-5xl font-bold  mt-5 lg:mt-16   '>Sell your home with confidence</p>
+        <p className='text-center font-light'>Zillow is making it simpler to sell your home and move forward.</p>
+
     </div>
     </>
   )
