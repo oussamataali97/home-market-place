@@ -7,57 +7,128 @@ import {SiVerizon} from 'react-icons/si'
 import banner from '../assets/jpg/banner.svg'
 import hero from '../assets/jpg/HeroSell.png'
 import {FaFacebook,FaInstagram,FaTwitter,FaYoutube,FaPinterest} from 'react-icons/fa'
+import Card from '@mui/joy/Card';
+import CardCover from '@mui/joy/CardCover';
+import CardContent from '@mui/joy/CardContent';
+import Typography from '@mui/joy/Typography';
+import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
 
 
 function Home() {
   return (
     <>
-    <div className='text-center space-y-5 p-5 '>
-        <p className='text-4xl font-bold mt-5  '>Explore our most popular cities</p>
-        <p className='font-light text-lg'>See what these cities have to offer and rent the perfect place</p>
+    <div className=' space-y-5 p-5 '>
+        <p className='text-center text-4xl font-bold mt-5  '>Explore our most popular cities</p>
+        <p className='text-center font-light text-lg'>See what these cities have to offer and rent the perfect place</p>
       <div className="img-card grid  md:grid-cols-2 lg:grid-cols-4 mx-auto gap-5 ">
         
-            <div className="card w-full bg-base-100 shadow-xl rounded-xl ">
-            <figure><img src={img1} alt="Shoes" className='md:h-56 md:w-full '/></figure>
-            <div className="card-body">
-                <h2 className=" font-bold mx-auto border-b-2 w-16 border-red-400 text-center mx-auto border-b-2 w-16 border-red-400">Ifrane</h2>
-                <p className='font-light text-xl'>Ifrane is a town in Morocco’s Middle Atlas Mountains. It’s known for its alpine-style architecture and nearby ski slopes and forests. A stone statue of a lion near leafy Parc la Prairie is a well-known</p>
-                
-            </div>
-            </div>
-        
-        
-                    <div className="card w-full  bg-base-100 shadow-xl">
-            <figure><img src={img2} alt="Shoes" className='md:h-56 md:w-full ' /></figure>
-            <div className="card-body">
-                <h2 className="font-bold mx-auto border-b-2 w-16 border-red-400  ">Tanger</h2>
-                <p className='font-light text-xl'>Tangier, a Moroccan port on the Strait of Gibraltar, has been a strategic gateway between Africa and Europe since Phoenician times.</p>
-                
-            </div>
-            </div>
-      
-                    <div className="card w-full bg-base-100 shadow-xl">
-            <figure><img src={img3} alt="Shoes" className='md:h-56 md:w-full'/></figure>
-            <div className="card-body">
-                <h2 className=" font-bold mx-auto border-b-2 w-24 border-red-400 text-center">Casablanca</h2>
-                <p  className='font-light text-xl'>Casablanca is a port city and commercial hub in western Morocco, fronting the Atlantic Ocean. The city's French colonial legacy is seen in its downtown Mauresque architecture,</p>
-                
-            </div>
-            </div>
-        
-                    <div className="card w-full bg-base-100 shadow-xl">
-            <figure><img src={img4} alt="Shoes" className='md:h-56 md:w-full' /></figure>
-            <div className="card-body ">
-                <h2 className=" font-bold mx-auto border-b-2 w-24 border-red-400 text-center text-center ">Marrakesh</h2>
-                <p className='font-light text-xl'>Marrakesh, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces and gardens. The medina is a densely packed, walled medieval city dating to the Berber Empire</p>
-                
-            </div>
-            </div>
+      <Card sx={{ minHeight: '280px', minWidth: 320 }}>
+      <CardCover>
+        <img
+          src="https://unsplash.com/photos/wjOMf53cv88/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8aWZyYW5lfGVufDB8MHx8fDE2NjAwNDkxNjE&force=true&w=640"
+          alt=""
+        />
+      </CardCover>
+      <CardCover
+        sx={{
+          background:
+            'linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+        }}
+      />
+      <CardContent sx={{ justifyContent: 'flex-end' }}>
+        <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
+          Town Center
+        </Typography>
+        <Typography
+          startDecorator={<LocationOnRoundedIcon />}
+          textColor="neutral.300"
+        >
+          Ifrane, MA
+        </Typography>
+      </CardContent>
+    </Card>
+
+    <Card sx={{ minHeight: '280px', minWidth: 320 }}>
+      <CardCover>
+        <img
+          src="https://unsplash.com/photos/CFKksjYRSQ8/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8bWFycmFrZXNofGVufDB8MHx8fDE2NjAwNDA5MjQ&force=true&w=640"
+          alt=""
+        />
+      </CardCover>
+      <CardCover
+        sx={{
+          background:
+            'linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+        }}
+      />
+      <CardContent sx={{ justifyContent: 'flex-end' }}>
+        <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
+          El koutoubia
+        </Typography>
+        <Typography
+          startDecorator={<LocationOnRoundedIcon />}
+          textColor="neutral.300"
+        >
+          Marrakesh, MA
+        </Typography>
+      </CardContent>
+    </Card>    <Card sx={{ minHeight: '280px', minWidth: 320 }}>
+      <CardCover>
+        <img
+          src="https://unsplash.com/photos/18fvXEV1R_A/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8Y2FzYWJsYW5jYXxlbnwwfDB8fHwxNjYwMDQ5Mzc0&force=true&w=640"
+          alt=""
+        />
+      </CardCover>
+      <CardCover
+        sx={{
+          background:
+            'linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+        }}
+      />
+      <CardContent sx={{ justifyContent: 'flex-end' }}>
+        <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
+          Mosque Hassan II
+        </Typography>
+        <Typography
+          startDecorator={<LocationOnRoundedIcon />}
+          textColor="neutral.300"
+        >
+          Casablanca, Ma
+        </Typography>
+      </CardContent>
+    </Card>
+
+    <Card sx={{ minHeight: '280px', minWidth: 320 }}>
+      <CardCover>
+        <img
+          src="https://unsplash.com/photos/NXNYSZSltck/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NHx8dGFuZ2VyfGVufDB8fHx8MTY2MDA0OTA0OA&force=true&w=640"
+          alt=""
+        />
+      </CardCover>
+      <CardCover
+        sx={{
+          background:
+            'linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+        }}
+      />
+      <CardContent sx={{ justifyContent: 'flex-end' }}>
+        <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
+          Old Medina
+        </Typography>
+        <Typography
+          startDecorator={<LocationOnRoundedIcon />}
+          textColor="neutral.300"
+        >
+          Tanger, Ma
+        </Typography>
+      </CardContent>
+    </Card>
         
        
 
       </div>
     </div>
+
         
     <div className="equipemnt max-w-6xl mx-auto my-10 ">
         <div className="text-center">
