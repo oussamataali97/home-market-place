@@ -10,6 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './components/PrivateRoute'
 import Category from './pages/Category'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
 
       </Routes>
-     
+     <Footer/>
     </Router>
     <ToastContainer/>
     </>
