@@ -93,7 +93,7 @@ function Home() {
           startDecorator={<LocationOnRoundedIcon />}
           textColor="neutral.300"
         >
-          Casablanca, Ma
+          Casablanca, MA
         </Typography>
       </CardContent>
     </Card>
@@ -116,10 +116,10 @@ function Home() {
           Old Medina
         </Typography>
         <Typography
-          startDecorator={<LocationOnRoundedIcon />}
+          startDecorator={<LocationOnRoundedIcon   />}
           textColor="neutral.300"
         >
-          Tanger, Ma
+          Tanger, MA
         </Typography>
       </CardContent>
     </Card>
