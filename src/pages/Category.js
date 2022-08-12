@@ -55,7 +55,7 @@ function Category() {
   return (
     <div className='max-w-7xl mx-auto'>
       <header>
-      <p className='text-5xl font-bold m-5'>
+      <p className='text-2xl md:text-5xl font-bold m-5'>
       {params.categoryName === 'rent' ? 'Places for Rent' : ' Places for Sale'}
       <a href="" className=''></a>
       </p>

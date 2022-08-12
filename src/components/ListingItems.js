@@ -10,7 +10,7 @@ function ListingItems({listing,id}) {
   return (
     <div className='p-5'>
 
-      <Link to={`/category/${listing.type}/${id}`} className="flex justify-start gap-7 shadow-lg ">
+      <Link to={`/category/${listing.type}/${id}`} className="flex justify-start gap-2 md:gap-7 shadow-lg ">
         <div className="img  relative">
         <img src={listing.imageUrls[0]} alt={listing.name} className='rounded-xl w-48 md:w-96 h-full  ' />
         <p className='bg-lime-300  rounded-full p-2 absolute bottom-2 right-2 flex justify-center items-center'><BsCameraFill/>{listing.imageUrls.length}</p>
