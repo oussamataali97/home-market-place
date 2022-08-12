@@ -16,7 +16,11 @@ import Footer from './components/Footer'
 function App() {
   return (
     <>
+
+
+
     <Router>
+
     <Navbar/>
       <Routes>
         <Route path='/' element={<Explore/>}/>
@@ -34,6 +38,7 @@ function App() {
      <Footer/>
     </Router>
     <ToastContainer/>
+   
     </>
   );
 }

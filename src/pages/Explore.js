@@ -1,29 +1,19 @@
 import React from 'react'
 import background from '../assets/jpg/hero.jpg'
-import SimpleImageSlider from "react-simple-image-slider";
 import Button from '../components/Button';
 import {Link} from 'react-router-dom'
 import Home from '../components/Home';
-import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
 
 function Explore() {
-  const images = [
-    { url: "images/1.jpg" },
-    { url: "images/2.jpg" },
-    { url: "images/3.jpg" },
-    { url: "images/4.jpg" },
-
-  ];
-  
 
   return (
     <>
     <div className="hero min-h-screen " style={{backgroundImage: `url(${background})`,backgroundSize:'cover'}}>
-<div className="hero-overlay bg-opacity-0">
+<div className="hero-overlay bg-opacity-0 ">
   
 </div>
 
@@ -35,7 +25,7 @@ function Explore() {
     <div className=" ">
     <Link to='/profile'><Button title='Get Started'/></Link>
     </div>
-  <div className="  hidden md:flex items-center justify-evenly font-bold mt-5 items-stretch">
+  <div className="  hidden md:flex justify-evenly font-bold mt-5 items-stretch">
         <div className="first bg-red-500  rounded-2xl px-5 py-2 flex flex-col md:items-start items-center justify-start	">
           <p>1200<span className='text-red-200 font-bold'>+</span></p>
           <p>Award wining</p>
@@ -47,6 +37,7 @@ function Explore() {
         <div className="third first bg-red-500 opacity-90 rounded-2xl px-5 py-2 items-center  flex flex-col md:items-start justify-start">
         <p> 240<span className='text-red-200  font-bold'>+</span></p>
           <p>Different Location</p>
+          
         </div>
   </div>
 

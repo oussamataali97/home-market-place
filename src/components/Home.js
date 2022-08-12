@@ -178,7 +178,7 @@ function Home() {
     
     <div className="banner w-full bg-cover bg-top flex md:h-[20rem] lg:h-[24rem] h-[16rem] justify-start flex-col items-center" style={{backgroundImage: `url(${hero})`}}>
         <p className='text-center text-2xl md:text-5xl font-bold  mt-5 lg:mt-16   '>Sell your home with confidence</p>
-        <p className='text-center font-light'>Zillow is making it simpler to sell your home and move forward.</p>
+        <p className='text-center font-light'>Home Market is making it simpler to sell your home and move forward.</p>
 
     </div>
     </>
