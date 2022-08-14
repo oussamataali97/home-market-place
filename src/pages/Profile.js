@@ -6,7 +6,12 @@ import {db} from '../firebase.config'
 import { updateDoc,doc } from 'firebase/firestore'
 import {useNavigate} from 'react-router-dom'
 import {toast } from 'react-toastify';
-import { Audio } from  'react-loader-spinner'
+import {useEffect} from 'react'
+import {Link} from 'react-router-dom'
+import Button from '../components/Button'
+import {HiHome} from 'react-icons/hi'
+import {IoIosArrowForward} from 'react-icons/io'
+import {FiEdit} from 'react-icons/fi'
 
 
 function Profile() {
@@ -64,7 +69,7 @@ function Profile() {
       <div className=" max-w-6xl mx-auto header flex justify-between items-center p-5">
             <h1 className='text-3xl font-bold underline'>My Profile</h1>
           
-            <button className='rounded-full px-7 py-3 bg-lime-400 hover:bg-lime-200 '  onClick={onLogout}> <FiLogOut className='inline'/> Logout</button>
+            <button className='btn btn-outline  btn-success rounded-full   '  onClick={onLogout}> <FiLogOut className='inline'/> Logout</button>
            
           </div>
       <div className="container max-w-4xl mx-auto p-4 mt-1">
@@ -75,10 +80,10 @@ function Profile() {
         
             <h1 className='text-xl font-bold text-red-600'>Personal Details</h1>
           
-            <button className='text-lime-400 font-bold' onClick={()=>{
+            <button className='text-lime-400 font-bold hover:text-red-500 flex items-center justify-center' onClick={()=>{
               changeDetail && onSubmit()
               setChangeDetail((prevState=>!prevState))
-            }}> {changeDetail ? 'done ' : 'change'} </button>
+            }}> <FiEdit className=' mr-1'/>{changeDetail ? 'Done ' : 'Edit'} </button>
            
           </div>
           <form onSubmit={onSubmit} className="mt-5">
@@ -106,8 +111,18 @@ function Profile() {
               
              
           </form>
+
         </div>
        
+        <Link to='/create' >
+        <button className='btn btn-outline bg-lime-500 glass p-2 w-96 mx-auto mt-5 hover:bg-red-600 flex justify-between items-center rounded-xl text-lg font-bold text-white'>
+          <HiHome/>
+          <p>Buy or Rent your Home</p>
+          <IoIosArrowForward/>
+          </button>
+        
+        
+        </Link>
 
       </div>
     </>

@@ -4,7 +4,7 @@ import {collection,getDocs,limit,where,query,orderBy,startAfter} from 'firebase/
 import {db} from '../firebase.config'
 import {toast} from 'react-toastify'
 import { useParams } from 'react-router-dom'
-import { ThreeDots } from  'react-loader-spinner'
+import { RotatingLines } from  'react-loader-spinner'
 import {MdError} from 'react-icons/md'
 import ListingItems from '../components/ListingItems'
 
@@ -62,16 +62,13 @@ function Category() {
       </header>
 
     {loading ? <p className='flex items-center justify-center h-screen pb-32'>
-         <ThreeDots 
-height="80" 
-width="80" 
-radius="9"
-color="#4fa94d" 
-ariaLabel="three-dots-loading"
-wrapperStyle={{}}
-wrapperClassName=""
-visible={true}
- />
+    <RotatingLines
+  strokeColor="grey"
+  strokeWidth="5"
+  animationDuration="0.75"
+  width="96"
+  visible={true}
+/>
           </p> : listing && listing.length > 0 ? 
   <>
     <main className='max-w-lg mx-auto md:max-w-4xl md:mx-0'>

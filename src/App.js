@@ -13,16 +13,24 @@ import Category from './pages/Category'
 import Footer from './components/Footer'
 
 
+
 function App() {
   return (
     <>
 
 
 
+    <div className="containerr flex justify-between h-screen flex-col">
+
     <Router>
 
-    <Navbar/>
-      <Routes>
+      <div className="nave">
+      <Navbar/>
+
+      </div>
+
+    <div className="mainse">
+    <Routes>
         <Route path='/' element={<Explore/>}/>
         <Route path='/offers' element={<Offers/>}/>
         <Route path='/category/:categoryName' element={<Category/>}/>
@@ -35,10 +43,17 @@ function App() {
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
 
       </Routes>
-     <Footer/>
+    </div>
+ 
     </Router>
-    <ToastContainer/>
-   
+    <div className="foots">
+     <Footer/>
+     <ToastContainer/>
+     </div>
+ 
+
+    </div>
+
     </>
   );
 }
