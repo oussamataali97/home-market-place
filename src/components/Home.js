@@ -30,13 +30,7 @@ function Home() {
         <Swiper
         modules={[Autoplay,Pagination,Navigation,EffectCoverflow]}
         effect={"coverflow"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
+     
         
         loop={true}
         navigation
@@ -52,14 +46,25 @@ function Home() {
         1024: {
          slidesPerView: 3,
          spaceBetween: 30
+
         },
         768: {
          slidesPerView: 2,
-         spaceBetween: 10
+         spaceBetween: 10,
+         coverflowEffect:{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }
         },
         640: {
          slidesPerView: 1,
-         spaceBetween: 10
+         spaceBetween: 10,
+         slidesPerView: 2,
+         spaceBetween: 10,
+       
        },
        320: {
         slidesPerView: 1,
@@ -67,7 +72,7 @@ function Home() {
        }
       }}
     >
-       <p className=' mt-9  '></p>
+       <p className='   '></p>
 
 
 <SwiperSlide>
