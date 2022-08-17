@@ -115,7 +115,7 @@ function Profile() {
         </div>
        
         <Link to='/create' >
-        <button className='btn btn-outline bg-lime-500 glass p-2 w-96 mx-auto mt-5 hover:bg-red-600 flex justify-between items-center rounded-xl text-lg font-bold text-white'>
+        <button className='btn btn-outline  glass p-2 md:w-96 mx-auto mt-5 hover:bg-red-400 flex justify-between items-center rounded-xl text-lg space-x-7 font-bold'>
           <HiHome/>
           <p>Buy or Rent your Home</p>
           <IoIosArrowForward/>

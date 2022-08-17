@@ -8,8 +8,7 @@ import { themeChange } from 'theme-change'
 function Navbar() {
 
   return (
- 
-    <div className="md:flex-row flex-col mt-1 md:mt-0 navbar bg-base-50 shadow-md p-0 md:p-2">
+    <div className=" md:flex-row flex-col mt-1 md:mt-0 navbar bg-base-50 shadow-md p-0 md:p-2">
   <div className="flex-1">
     <Link to='/' className="cursor-pointer ml-4"><img src={logo} width={80} alt="logo" /></Link>
   </div>

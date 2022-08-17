@@ -7,11 +7,16 @@ import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+ 
 
 function Explore() {
 
+
   return (
     <>
+
     <div className="hero min-h-screen " style={{backgroundImage: `url(${background})`,backgroundSize:'cover'}}>
 <div className="hero-overlay bg-opacity-0 ">
   

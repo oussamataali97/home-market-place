@@ -3,6 +3,7 @@ import img1 from '../assets/jpg/ifrane.jpg'
 import img2 from '../assets/jpg/tanger.jpg'
 import img3 from '../assets/jpg/casa.jpg'
 import img4 from '../assets/jpg/mrakch.jpg'
+import { EffectFade,Autoplay } from 'swiper';
 import {SiVerizon} from 'react-icons/si'
 import banner from '../assets/jpg/banner.svg'
 import hero from '../assets/jpg/HeroSell.png'
@@ -12,6 +13,9 @@ import CardCover from '@mui/joy/CardCover';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
 import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css/autoplay';
+
 
 
 function Home() {
@@ -20,8 +24,38 @@ function Home() {
     <div className=' space-y-5 p-5 '>
         <p className='text-center text-4xl font-bold mt-5  '>Explore our most popular cities</p>
         <p className='text-center font-light text-lg'>See what these cities have to offer and rent the perfect place</p>
-      <div className="img-card grid  md:grid-cols-2 lg:grid-cols-4 mx-auto gap-5 ">
+     
+        <Swiper
+        modules={[Autoplay]}
+       
         
+        autoplay={{
+          delay:3000,
+         
+          
+        }}
+      breakpoints={{
+        1024: {
+         slidesPerView: 3,
+         spaceBetween: 30
+        },
+        768: {
+         slidesPerView: 2,
+         spaceBetween: 10
+        },
+        640: {
+         slidesPerView: 1,
+         spaceBetween: 10
+       },
+       320: {
+        slidesPerView: 1,
+        spaceBetween: 10
+       }
+      }}
+    >
+
+
+<SwiperSlide>
       <Card sx={{ minHeight: '280px', minWidth: 320 }}>
       <CardCover>
         <img
@@ -47,7 +81,9 @@ function Home() {
         </Typography>
       </CardContent>
     </Card>
+</SwiperSlide>
 
+<SwiperSlide>
     <Card sx={{ minHeight: '280px', minWidth: 320 }}>
       <CardCover>
         <img
@@ -72,7 +108,11 @@ function Home() {
           Marrakesh, MA
         </Typography>
       </CardContent>
-    </Card>    <Card sx={{ minHeight: '280px', minWidth: 320 }}>
+    </Card>  
+    </SwiperSlide>
+    
+    <SwiperSlide>
+   <Card sx={{ minHeight: '280px', minWidth: 320 }}>
       <CardCover>
         <img
           src="https://unsplash.com/photos/18fvXEV1R_A/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8Y2FzYWJsYW5jYXxlbnwwfDB8fHwxNjYwMDQ5Mzc0&force=true&w=640"
@@ -97,7 +137,129 @@ function Home() {
         </Typography>
       </CardContent>
     </Card>
+</SwiperSlide>
 
+
+<SwiperSlide>
+    <Card sx={{ minHeight: '280px', minWidth: 320 }}>
+      <CardCover>
+        <img
+          src="https://unsplash.com/photos/CFKksjYRSQ8/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8bWFycmFrZXNofGVufDB8MHx8fDE2NjAwNDA5MjQ&force=true&w=640"
+          alt=""
+        />
+      </CardCover>
+      <CardCover
+        sx={{
+          background:
+            'linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+        }}
+      />
+      <CardContent sx={{ justifyContent: 'flex-end' }}>
+        <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
+          El koutoubia
+        </Typography>
+        <Typography
+          startDecorator={<LocationOnRoundedIcon />}
+          textColor="neutral.300"
+        >
+          Marrakesh, MA
+        </Typography>
+      </CardContent>
+    </Card>  
+    </SwiperSlide>
+
+
+    <SwiperSlide>
+   <Card sx={{ minHeight: '280px', minWidth: 320 }}>
+      <CardCover>
+        <img
+          src="https://unsplash.com/photos/uxV3wDMyccM/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjYwNzQwNzgx&force=true&w=640"
+          alt=""
+        />
+      </CardCover>
+      <CardCover
+        sx={{
+          background:
+            'linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+        }}
+      />
+      <CardContent sx={{ justifyContent: 'flex-end' }}>
+        <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
+          Old Medina 
+        </Typography>
+        <Typography
+          startDecorator={<LocationOnRoundedIcon />}
+          textColor="neutral.300"
+        >
+          Essaouira, MA
+        </Typography>
+      </CardContent>
+    </Card>
+</SwiperSlide>
+
+
+
+<SwiperSlide>
+   <Card sx={{ minHeight: '280px', minWidth: 320 }}>
+      <CardCover>
+        <img
+          src="https://scontent.frba1-1.fna.fbcdn.net/v/t39.30808-6/296347647_10160208937474362_3568820926771596447_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFiCihEBfQE1w8FBYnjhf9qm2-_5M0fC3mbb7_kzR8LecF-kZXw-fRlV23qn2gUNBsIOrojFN_gNSAQlYrGZAoL&_nc_ohc=bI-Bx2d592YAX8beOIt&_nc_zt=23&_nc_ht=scontent.frba1-1.fna&oh=00_AT9klLmjNZLHDC1A56Z7DnZgvFWXwdj0rgTXcnJpN35oXw&oe=6301AE56"
+          alt=""
+        />
+      </CardCover>
+      <CardCover
+        sx={{
+          background:
+            'linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+        }}
+      />
+      <CardContent sx={{ justifyContent: 'flex-end' }}>
+        <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
+          Lkarkor Palace 
+        </Typography>
+        <Typography
+          startDecorator={<LocationOnRoundedIcon />}
+          textColor="neutral.300"
+        >
+          Errachidia, MA
+        </Typography>
+      </CardContent>
+    </Card>
+</SwiperSlide>
+    
+    <SwiperSlide>
+   <Card sx={{ minHeight: '280px', minWidth: 320 }}>
+      <CardCover>
+        <img
+          src="https://unsplash.com/photos/JuvWdpZd2Jo/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjYwNzQwNjM0&force=true&w=640"
+          alt=""
+        />
+      </CardCover>
+      <CardCover
+        sx={{
+          background:
+            'linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+        }}
+      />
+      <CardContent sx={{ justifyContent: 'flex-end' }}>
+        <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
+          Beach Nador
+        </Typography>
+        <Typography
+          startDecorator={<LocationOnRoundedIcon />}
+          textColor="neutral.300"
+        >
+          Nador, MA
+        </Typography>
+      </CardContent>
+    </Card>
+</SwiperSlide>
+
+
+
+
+
+<SwiperSlide>
     <Card sx={{ minHeight: '280px', minWidth: 320 }}>
       <CardCover>
         <img
@@ -123,10 +285,11 @@ function Home() {
         </Typography>
       </CardContent>
     </Card>
-        
+       </SwiperSlide> 
        
 
-      </div>
+      </Swiper>
+
     </div>
 
         
