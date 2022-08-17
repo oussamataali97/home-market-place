@@ -1,10 +1,7 @@
 import React from 'react'
-import img1 from '../assets/jpg/ifrane.jpg'
-import img2 from '../assets/jpg/tanger.jpg'
-import img3 from '../assets/jpg/casa.jpg'
-import img4 from '../assets/jpg/mrakch.jpg'
-import { EffectFade,Autoplay } from 'swiper';
-import {SiVerizon} from 'react-icons/si'
+
+import { Autoplay } from 'swiper';
+import {MdVerified} from 'react-icons/md'
 import banner from '../assets/jpg/banner.svg'
 import hero from '../assets/jpg/HeroSell.png'
 import {FaFacebook,FaInstagram,FaTwitter,FaYoutube,FaPinterest} from 'react-icons/fa'
@@ -15,6 +12,12 @@ import Typography from '@mui/joy/Typography';
 import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/autoplay';
+import { Navigation, Pagination,EffectCoverflow } from 'swiper';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import "swiper/css/effect-coverflow";
+
 
 
 
@@ -24,13 +27,24 @@ function Home() {
     <div className=' space-y-5 p-5 '>
         <p className='text-center text-4xl font-bold mt-5  '>Explore our most popular cities</p>
         <p className='text-center font-light text-lg'>See what these cities have to offer and rent the perfect place</p>
-     
         <Swiper
-        modules={[Autoplay]}
-       
+        modules={[Autoplay,Pagination,Navigation,EffectCoverflow]}
+        effect={"coverflow"}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
         
+        loop={true}
+        navigation
+      pagination={{ clickable: true }}
         autoplay={{
-          delay:3000,
+          delay:2000,
+          disableOnInteraction:false
+          
          
           
         }}
@@ -53,6 +67,7 @@ function Home() {
        }
       }}
     >
+       <p className=' mt-9  '></p>
 
 
 <SwiperSlide>
@@ -287,9 +302,9 @@ function Home() {
     </Card>
        </SwiperSlide> 
        
+      
 
       </Swiper>
-
     </div>
 
         
@@ -304,9 +319,9 @@ function Home() {
                 <p className='text-3xl font-bold pt-5 text-black'>Landlords and Agents</p>
                 <p className='text-lg py-3 font-semibold'>Manage your rentals with our free leasing tools.</p>
                 <ul className='my-5'>
-                    <li className='flex'><SiVerizon className='mr-5' size={20} color={"lime"}/>Reach over 13 million high-quality renters actively searching on our network</li>
-                    <li className='flex'><SiVerizon className='mr-5' size={20} color={"lime"}/>Screen renters with credit reports, background checks, and applications</li>
-                    <li className='flex'><SiVerizon className='mr-5' size={20} color={"lime"}/>Collect rent online for seamless and secure payments Sponsor</li>
+                    <li className='flex items-center justify-center'><MdVerified className='mr-5'  size={20} color={"lime"}/>Reach over 13 million high-quality renters actively searching on our network</li>
+                    <li className='flex items-center justify-center'><MdVerified className='mr-5' size={20} color={"lime"}/>Screen renters with credit reports, background checks, and applications</li>
+                    <li className='flex items-center justify-center'><MdVerified className='mr-5' size={20} color={"lime"}/>Collect rent online for seamless and secure payments Sponsor</li>
                 </ul>
                 <button className='btn block w-full bg-lime-500 border-none hover:bg-lime-400'>Learn More</button>
 
@@ -316,9 +331,9 @@ function Home() {
             <p className='text-3xl font-bold pt-5 text-black'>Multifamily Communities</p>
                 <p className='text-lg py-3 font-semibold'>Advertise with us to optimize your leasing success.</p>
                 <ul className='my-5'>
-                    <li className='flex '><SiVerizon className='mr-5' size={20} color={"lime"}/>Reach over 13 million high-quality renters actively searching on our network</li>
-                    <li className='flex '><SiVerizon className='mr-5' size={20} color={"lime"}/>Get exposure across our broad network of leading apartment search sites</li>
-                    <li className='flex '><SiVerizon className='mr-5' size={20} color={"lime"}/>Receive ongoing support from a dedicated Account Manager </li>
+                    <li className='flex '><MdVerified className='mr-5'  size={20} color={"lime"}/>Reach over 13 million high-quality renters actively searching on our network</li>
+                    <li className='flex '><MdVerified className='mr-5' size={20} color={"lime"}/>Get exposure across our broad network of leading apartment search sites</li>
+                    <li className='flex '><MdVerified className='mr-5' size={20} color={"lime"}/>Receive ongoing support from a dedicated Account Manager </li>
                 </ul>
                 <button className='btn block w-full bg-lime-500 border-none hover:bg-lime-400'>Learn More</button>
             </div>

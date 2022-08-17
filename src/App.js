@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './components/PrivateRoute'
 import Category from './pages/Category'
 import Footer from './components/Footer'
+
 import 'swiper/css';
 
 
