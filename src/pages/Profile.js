@@ -6,9 +6,7 @@ import {db} from '../firebase.config'
 import { updateDoc,doc } from 'firebase/firestore'
 import {useNavigate} from 'react-router-dom'
 import {toast } from 'react-toastify';
-import {useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import Button from '../components/Button'
 import {HiHome} from 'react-icons/hi'
 import {IoIosArrowForward} from 'react-icons/io'
 import {FiEdit} from 'react-icons/fi'
@@ -114,7 +112,7 @@ function Profile() {
 
         </div>
        
-        <Link to='/create' >
+        <Link to='/create-listning' >
         <button className='btn btn-outline  glass p-2 md:w-96 mx-auto mt-5 hover:bg-red-400 flex justify-between items-center rounded-xl text-lg space-x-7 font-bold'>
           <HiHome/>
           <p>Buy or Rent your Home</p>

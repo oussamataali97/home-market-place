@@ -4,6 +4,7 @@ import Offers from './pages/Offers'
 import ForgotPassword from './pages/ForgotPassword'
 import Profile from './pages/Profile'
 import SignIn from './pages/SignIn'
+import CreateListning from './pages/CreateListning'
 import SignUp from './pages/SignUp'
 import Navbar from './components/Navbar'
 import { ToastContainer } from 'react-toastify';
@@ -43,6 +44,8 @@ function App() {
         </Route>
         <Route path='/sign-in' element={<SignIn/>}/>
         <Route path='/sign-up' element={<SignUp/>}/>
+        <Route path='/create-listning' element={<CreateListning/>}/>
+
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
 
       </Routes>

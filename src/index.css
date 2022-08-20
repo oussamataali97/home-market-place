@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.activee{
+background-color: rgb(156, 156, 156) !important;
+color:white !important;
+border: none;
+}
+
+::-webkit-file-upload-button{
+    background-color: #37CDBE;
+    border-radius: 50px;
+    color:rgb(49, 49, 49);
+    padding:7px;
+    border:none;
+    cursor: pointer;
+    
+}
