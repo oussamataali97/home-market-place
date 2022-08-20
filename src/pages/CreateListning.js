@@ -109,14 +109,14 @@ visible={true}
 
   }
   return (
-    <div className='m-1  shadow-lg'>
+    <div className='m-3 '>
 
      
       <p className='text-4xl font-bold  mt-5 ml-5'>Create Listning</p>
       <p className='font-light text-lg mt-2 ml-5'>Sell / Rent </p>
 
 
-        <form action="" onSubmit={handleSubmit} className='space-y-3 md:w-[60%] lg:w-1/2 mx-auto p-5 mb-5 mx-2 '>
+        <form action="" onSubmit={handleSubmit} className='space-y-3 shadow-lg md:w-[60%] lg:w-1/2 mx-auto p-2 mb-5  '>
         <div className="buttonsNav flex justify-around ">
         <button type='button' className={type ==='sell' ? `btn btn-warning md:w-[46%] w-40 rounded-full` : `btn btn-outline btn-success  md:w-[46%] w-40 rounded-full` }  id="type" value="sell" onClick={onMutate} >Sell</button>
         <button  type='button' className={type ==='rent' ? `btn btn-warning md:w-[46%] w-40 rounded-full` : `btn btn-outline btn-error  md:w-[46%] w-40 rounded-full`}  id="type" value="rent" onClick={onMutate} >Rent</button>
