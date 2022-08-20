@@ -36,6 +36,8 @@ function CreateListning() {
           onAuthStateChanged(auth,(user)=>{
             if(user){
               setFormData({...formData,userRef: user.uid})
+              setLoading(false)
+
             }else {
               navigate('/sign-in')
             }
@@ -45,7 +47,6 @@ function CreateListning() {
 
         return ()=>{
           isMounted.current=false
-          setLoading(false  )
         }
 
     },[isMounted])
