@@ -109,17 +109,17 @@ visible={true}
 
   }
   return (
-    <div className=' '>
+    <div className='m-1  shadow-lg'>
 
      
-      <p className='text-4xl font-bold text-center mt-5'>Create Listning</p>
+      <p className='text-4xl font-bold  mt-5 ml-5'>Create Listning</p>
+      <p className='font-light text-lg mt-2 ml-5'>Sell / Rent </p>
 
 
-        <form action="" onSubmit={handleSubmit} className='space-y-3 shadow-lg md:w-[60%] lg:w-1/2 mx-auto p-5 m-5'>
-        <p className='font-light text-lg'>Sell / Rent </p>
+        <form action="" onSubmit={handleSubmit} className='space-y-3 md:w-[60%] lg:w-1/2 mx-auto p-5 mb-5 mx-2 '>
         <div className="buttonsNav flex justify-around ">
-        <button type='button' className={type ==='sell' ? `btn btn-warning md:w-[46%] w-44 rounded-full` : `btn btn-outline btn-success  md:w-[46%] w-44 rounded-full` }  id="type" value="sell" onClick={onMutate} >Sell</button>
-        <button  type='button' className={type ==='rent' ? `btn btn-warning md:w-[46%] w-44 rounded-full` : `btn btn-outline btn-error  md:w-[46%] w-44 rounded-full`}  id="type" value="rent" onClick={onMutate} >Rent</button>
+        <button type='button' className={type ==='sell' ? `btn btn-warning md:w-[46%] w-40 rounded-full` : `btn btn-outline btn-success  md:w-[46%] w-40 rounded-full` }  id="type" value="sell" onClick={onMutate} >Sell</button>
+        <button  type='button' className={type ==='rent' ? `btn btn-warning md:w-[46%] w-40 rounded-full` : `btn btn-outline btn-error  md:w-[46%] w-40 rounded-full`}  id="type" value="rent" onClick={onMutate} >Rent</button>
       </div>
         <div className="form-control w-full">
   <label className="label">
@@ -208,7 +208,7 @@ visible={true}
 
 
 <div className="rooms w-full flex justify-between">
-<div className="form-control w-44">
+<div className="form-control w-[10.5rem]">
   <label className="label">
     <span className="label-text font-bold">Beedrooms :</span>
   </label>
@@ -216,7 +216,7 @@ visible={true}
  
 </div>
 
-<div className="form-control w-44">
+<div className="form-control w-[10.5rem]">
   <label className="label">
     <span className="label-text font-bold">Bathrooms :</span>
   </label>
@@ -227,7 +227,7 @@ visible={true}
 </div>
 
 <div className="maps w-full flex justify-between">
-<div className="form-control w-44">
+<div className="form-control w-[10.5rem]">
   <label className="label">
     <span className="label-text font-bold">Latitude :</span>
   </label>
@@ -235,7 +235,7 @@ visible={true}
  
 </div>
 
-<div className="form-control w-44">
+<div className="form-control w-[10.5rem]">
   <label className="label">
     <span className="label-text font-bold">Longuitude :</span>
   </label>
