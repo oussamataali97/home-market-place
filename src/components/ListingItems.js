@@ -11,11 +11,11 @@ function ListingItems({listing,id}) {
   return (
     <div className='p-5'>
 
-      <Link to={`/category/${listing.type}/${id}`} className=" rounded-l-lg flex justify-start gap-2 md:gap-7 shadow-lg relative ">
+      <Link to={`/category/${listing.type}/${id}`} className=" rounded-l-lg flex  justify-start gap-2 md:gap-7 shadow-lg relative ">
         <FcLike size={30} className='absolute top-0 right-0 m-2'/>
         <div className="img  relative">
-        <img src={listing.imageUrls[0]} alt={listing.name} className='rounded-l-lg w-48 md:w-96 h-full  ' />
-        <p className='bg-lime-300  rounded-full px-2 absolute bottom-2 right-2 flex justify-center items-center'><BsCameraFill className='mr-1'/> {listing.imageUrls.length}</p>
+        <img src={listing.imgUrls[0]} alt={listing.name} className='rounded-l-lg w-48 md:w-96 h-full  ' />
+        <p className='bg-lime-300  rounded-full px-2 absolute bottom-2 right-2 flex justify-center items-center'><BsCameraFill className='mr-1'/> {listing.imgUrls.length}</p>
 
         </div>
 

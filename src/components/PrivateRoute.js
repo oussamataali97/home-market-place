@@ -8,7 +8,7 @@ function PrivateRoute() {
     const {loggedIn,checkStatut} =useAuthStatuts()
 
     if (checkStatut){
-        return  <p className='flex items-center justify-center h-screen pb-32'>
+        return  <h1 className='flex items-center justify-center h-screen pb-32'>
          <ThreeDots 
 height="80" 
 width="80" 
@@ -19,7 +19,7 @@ wrapperStyle={{}}
 wrapperClassName=""
 visible={true}
  />
-          </p>
+          </h1>
     }
 
     return loggedIn ? <Outlet /> : <Navigate to='/sign-in' />

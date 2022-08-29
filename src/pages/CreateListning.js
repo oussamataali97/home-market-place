@@ -3,28 +3,35 @@ import {useState,useRef,useEffect} from 'react'
 import{useNavigate} from 'react-router-dom'
 import { ThreeDots } from  'react-loader-spinner'
 import {getAuth,onAuthStateChanged} from 'firebase/auth'
+import {toast } from 'react-toastify';
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
+import {db} from '../firebase.config'
+import { addDoc,collection,serverTimestamp } from 'firebase/firestore'
+import { uuidv4 } from '@firebase/util'
 
 function CreateListning() {
     const [loading,setLoading]=useState(true)
-   const [geoCoding,setGeoCoding]=useState(true)
+   const [geoLoaction,setGeoLocation]=useState(true)
     const [formData,setFormData]=useState({
+      bathrooms:2,
+      bedrooms:2,
+      description:'',
+      discountedPrice:150,
+      furnished:null,
+      images:{},
+      location:'',
+      name:'',
+      offer:null,
+      parking:null,
+      regularPrice:200,
         type:'',
-        name:'',
-        bedrooms:2,
-        bathrooms:2,
-        parking:null,
-        offer:null,
-        adresse:'',
-        regularPrice:200,
-        description:'',
-        discountedPrice:150,
-        furnished:null,
-        images:{},
-        latitude:0,
-        longitude:0,
+      
+      
+        
+  
 
     })
-    const {type,name,description,bedrooms,bathrooms,parking,offer,adresse,regularPrice,discountedPrice,furnished,images,latitude,longitude} =formData
+    const {type,name,description,bedrooms,bathrooms,parking,offer,location,regularPrice,discountedPrice,furnished,images,latitude,longitude} =formData
     const auth=getAuth();
     const navigate=useNavigate();
 
@@ -87,13 +94,86 @@ function CreateListning() {
 
     }
 
-    const handleSubmit =(e)=>{
+    const handleSubmit =async(e)=>{
       e.preventDefault()
-      console.log(formData)
+      if(discountedPrice>=regularPrice){
+        setLoading(false)
+        toast.error('the discounted price should be less than regular price !')
+        return
+      }
+
+
+   
+      if(images.length>6){
+        setLoading(false)
+        toast.error('Max 6 Images')
+        return
+      }
+
+      const storeImage = async(image)=>{
+        return new Promise((resolve,reject)=>{
+          const storage=getStorage()
+          const fileName=`${auth.currentUser.uid}-${image.name}-${uuidv4()}`
+          const storageRef=ref(storage ,'images/'+ fileName)
+          const uploadTask = uploadBytesResumable(storageRef,image);
+
+          uploadTask.on('state_changed', 
+  (snapshot) => {
+    // Observe state change events such as progress, pause, and resume
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case 'paused':
+        console.log('Upload is paused');
+        break;
+      case 'running':
+        console.log('Upload is running');
+        break;
+    }
+  }, 
+  (error) => {
+    reject(error)
+  }, 
+  () => {
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      resolve(downloadURL); 
+  
+    });
+  }
+);
+
+        })
+      }
+
+      const imgUrls = await Promise.all(
+        [...images].map((image)=>storeImage(image))
+       
+        )
+
+        const formDatacopy={
+          ...formData,
+          imgUrls,
+          timestamp:serverTimestamp()
+        }
+
+        delete formDatacopy.images
+
+        !formDatacopy.offer && delete formDatacopy.discountedPrice
+
+        const docRef=await addDoc(collection(db,'listings'),formDatacopy)
+        setLoading(false)
+        toast.success('Listning Saved !')
+        navigate(`/category/${formDatacopy.type}/${docRef.id}`)
+       
     }
 
+
+
+
+
     if (loading){
-      return  <p className='flex items-center justify-center h-screen pb-32'>
+      return  <h1 className='flex items-center justify-center h-screen pb-32'>
        <ThreeDots 
 height="80" 
 width="80" 
@@ -104,7 +184,7 @@ wrapperStyle={{}}
 wrapperClassName=""
 visible={true}
 />
- </p>
+ </h1>
 
 
   }
@@ -125,7 +205,7 @@ visible={true}
   <label className="label">
     <span className="label-text font-bold">Name :</span>
   </label>
-  <input type="text" placeholder="Type here" className="input input-bordered " id="name" value={name} onChange={onMutate}  />
+  <input type="text" placeholder="Type here" className="input input-bordered " id="name" value={name} required  onChange={onMutate}  />
  
 </div>
 
@@ -158,7 +238,7 @@ visible={true}
    <label className="label">
      <span className="label-text font-bold">Discounted Price :</span>
    </label>
-   <input type="number" placeholder="Type here"  className="input input-bordered " required={offer} id="discountedPrice" value={discountedPrice} onChange={onMutate}/>
+   <input type="number" placeholder="Type here"  className="input input-bordered " required={offer} id="discountedPrice" value={discountedPrice}  onChange={onMutate}/>
   
  </div>
 )}
@@ -168,7 +248,7 @@ visible={true}
   <label className="label">
     <span className="label-text font-bold">Adresse :</span>
   </label>
-  <textarea class="textarea textarea-bordered h-24" placeholder="Adress..." id="adresse" value={adresse} onChange={onMutate}></textarea>
+  <textarea className="textarea textarea-bordered h-24" placeholder="Adress..." id="location" value={location} required  onChange={onMutate}></textarea>
  
 </div>
 
@@ -191,7 +271,7 @@ visible={true}
     <span className="label-text font-bold">Regular Price :</span>
   </label>
   <div className="text flex space-x-2 items-center">
-  <input type="text" placeholder="Type here" className="input input-bordered " id="regularPrice" value={regularPrice} onChange={onMutate}/>
+  <input type="text" placeholder="Type here" className="input input-bordered " id="regularPrice" value={regularPrice} required  onChange={onMutate}/>
     {type ==='rent' && <p className='w-full'>$/Month</p>}
   </div>
 
@@ -201,7 +281,7 @@ visible={true}
   <label className="label">
     <span className="label-text font-bold">Description :</span>
   </label>
-  <textarea class="textarea textarea-bordered h-24" placeholder="Description..." id="description" value={description} onChange={onMutate}></textarea>
+  <textarea className="textarea textarea-bordered h-24" placeholder="Description..." id="description" value={description} required  onChange={onMutate}></textarea>
  
 </div>
 
@@ -212,7 +292,7 @@ visible={true}
   <label className="label">
     <span className="label-text font-bold">Beedrooms :</span>
   </label>
-  <input type="number" placeholder="Type here" className="input input-bordered "  id="bedrooms" value={bedrooms} onChange={onMutate} />
+  <input type="number" placeholder="Type here" className="input input-bordered "  id="bedrooms" value={bedrooms} required  onChange={onMutate} />
  
 </div>
 
@@ -220,43 +300,25 @@ visible={true}
   <label className="label">
     <span className="label-text font-bold">Bathrooms :</span>
   </label>
-  <input type="number" placeholder="Type here" className="input input-bordered " id="bathrooms" value={bathrooms} onChange={onMutate} />
+  <input type="number" placeholder="Type here" className="input input-bordered " id="bathrooms" value={bathrooms} required  onChange={onMutate} />
  
 </div>
 
 </div>
 
-<div className="maps w-full flex justify-between">
-<div className="form-control w-[10.5rem]">
-  <label className="label">
-    <span className="label-text font-bold">Latitude :</span>
-  </label>
-  <input type="number" placeholder="Type here" className="input input-bordered "  id="latitude" value={latitude} onChange={onMutate} />
- 
-</div>
 
-<div className="form-control w-[10.5rem]">
-  <label className="label">
-    <span className="label-text font-bold">Longuitude :</span>
-  </label>
-  <input type="number" placeholder="Type here" className="input input-bordered " id="longitude" value={longitude} onChange={onMutate} />
- 
-</div>
-
-</div>
-
-<div className="form-control w-full">
+<div className="form-control w-full mb-5">
   <label className="label flex flex-col justify-start items-start">
     <span className="label-text font-bold">Images :</span>
     <span className='font-light text-sm'>The first image will be the cover (max 6) </span>
   </label>
-  <input type="file" className=" bg-gray-50 rounded-full p-1" id="images" max='6' accept='.jpg,.jpeg.png' multiple  onChange={onMutate}  />
+  <input type="file" className=" bg-gray-50 rounded-full p-1 mb-7 " id="images" max='6' accept='.jpg,.jpeg.png' multiple   required  onChange={onMutate}  />
  
 </div>
 
 
 
-<button className='btn btn-success mt-5 w-full '>Create Listning</button>
+<button className='btn btn-success w-full '>Create Listning</button>
 
         </form>
     </div>

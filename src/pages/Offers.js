@@ -73,7 +73,7 @@ function Offers() {
 />
           </p> : listing && listing.length > 0 ? 
   <>
-    <main className='max-w-lg mx-auto md:max-w-4xl md:mx-0'>
+    <main className='max-w-lg mx-auto md:max-w-5xl md:mx-0'>
       {listing.map((list)=>(
         <ListingItems listing={list.data} id={list.id} key={list.id}/>
       ))}
