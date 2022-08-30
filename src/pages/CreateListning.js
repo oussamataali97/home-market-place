@@ -11,7 +11,6 @@ import { uuidv4 } from '@firebase/util'
 
 function CreateListning() {
     const [loading,setLoading]=useState(true)
-   const [geoLoaction,setGeoLocation]=useState(true)
     const [formData,setFormData]=useState({
       bathrooms:2,
       bedrooms:2,
@@ -68,9 +67,6 @@ function CreateListning() {
       } 
       if(e.target.value === 'false'){
         boolean=false
-      
-
-
       } 
 
       

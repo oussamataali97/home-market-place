@@ -61,10 +61,10 @@ function Explore() {
             autoPlay
             loop
             muted
-            poster="https://images.pexels.com/videos/3773486/decoration-design-estate-furniture-3773486.jpeg?auto=compress&cs=tinysrgb&w=1440"
+            poster="https://images.pexels.com/videos/3769951/pexels-photo-3769951.jpeg?auto=compress&cs=tinysrgb&w=150%20150w,%20https://images.pexels.com/videos/3769951/pexels-photo-3769951.jpeg?auto=compress&cs=tinysrgb&w=300%20300w,%20https://images.pexels.com/videos/3769951/pexels-photo-3769951.jpeg?auto=compress&cs=tinysrgb&w=400%20400w,%20https://images.pexels.com/videos/3769951/pexels-photo-3769951.jpeg?auto=compress&cs=tinysrgb&w=600%20600w,%20https://images.pexels.com/videos/3769951/pexels-photo-3769951.jpeg?auto=compress..."
           >
             <source
-              src="https://vod-progressive.akamaized.net/exp=1660151660~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3522%2F15%2F392612459%2F1664011326.mp4~hmac=57aaa3d3bd5052d275175e121693037af0b94e1cf6434e0e74b55880fc1afbc8/vimeo-prod-skyfire-std-us/01/3522/15/392612459/1664011326.mp4"
+              src="https://vod-progressive.akamaized.net/exp=1661880603~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3516%2F15%2F392582044%2F1663830156.mp4~hmac=3d8f460cb88dff1fd7f2025f8269f75c4ccaf08172af8c787e7ecbb90f315f37/vimeo-prod-skyfire-std-us/01/3516/15/392582044/1663830156.mp4"
               type="video/mp4"
             />
           </video>
@@ -94,7 +94,7 @@ function Explore() {
             poster="https://images.pexels.com/videos/4301618/pexels-photo-4301618.jpeg?auto=compress&cs=tinysrgb&w=1440"
           >
             <source
-              src="https://vod-progressive.akamaized.net/exp=1660151738~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2876%2F16%2F414380290%2F1782731090.mp4~hmac=b997776aa6301e049751f064de654865a432b035e94a1f40b83a2bf01641c991/vimeo-prod-skyfire-std-us/01/2876/16/414380290/1782731090.mp4"
+              src="https://vod-progressive.akamaized.net/exp=1661831601~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2876%2F16%2F414380290%2F1782731090.mp4~hmac=58ac90629dc94b261fdd811af219ff7046009bcb41a0e687acaca6fe017807c8/vimeo-prod-skyfire-std-us/01/2876/16/414380290/1782731090.mp4"
               type="video/mp4"
             />
           </video>
