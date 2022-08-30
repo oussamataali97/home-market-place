@@ -77,7 +77,7 @@ function Offers() {
       {listing.map((list)=>(
         <ListingItems listing={list.data} id={list.id} key={list.id}/>
       ))}
-    </main>
+    </main> 
   </>
   :
   <div className='font-semibold text-xl flex items-center'><MdError size={30} className='text-lime-500 mr-3'/>There are no current offers {params.categoryName}</div>  
