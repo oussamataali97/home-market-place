@@ -5,7 +5,7 @@ function Footer() {
     const date=new Date();
     const fullYear=date.getFullYear()
   return (
-    <footer className="footer footer-center p-10 bg-gray-9git00 text-primary-content 			">
+    <footer className="footer footer-center p-10 bg-gray-900 text-primary-content 			">
               <img src={sale} alt="" className='w-40' />
 
     <div>
